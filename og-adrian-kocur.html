@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Cabinet+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{width:1200px;height:630px;overflow:hidden;background:#fff;font-family:'Cabinet Grotesk',sans-serif;display:flex;align-items:stretch;}
+.left{width:520px;flex-shrink:0;background:#f8f8fc;border-right:1.5px solid rgba(0,0,0,0.07);padding:56px 48px;display:flex;flex-direction:column;justify-content:space-between;}
+.logo-row{display:flex;align-items:center;gap:10px;}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,#0066FF 0%,#8A3FFC 100%);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Clash Display',sans-serif;font-size:13px;font-weight:700;color:#fff;}
+.logo-name{font-family:'Clash Display',sans-serif;font-size:20px;font-weight:700;color:#0a0a14;letter-spacing:-0.5px;}
+.hey{font-size:18px;font-weight:500;color:#9898b8;margin-bottom:12px;}
+.name{font-family:'Clash Display',sans-serif;font-size:52px;font-weight:700;color:#0a0a14;line-height:1.0;letter-spacing:-1.5px;margin-bottom:16px;}
+.subline{font-size:20px;font-weight:700;color:#0066FF;line-height:1.3;}
+.bottom-tag{display:inline-flex;align-items:center;gap:8px;background:#e0ecff;color:#0066FF;font-size:13px;font-weight:700;padding:8px 16px;border-radius:999px;}
+.right{flex:1;padding:48px 52px;display:flex;flex-direction:column;justify-content:space-between;}
+.power-row{display:flex;align-items:center;justify-content:space-between;}
+.power-block{width:90px;height:90px;background:linear-gradient(135deg,#0066FF 0%,#8A3FFC 100%);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.power-val{font-family:'Clash Display',sans-serif;font-size:40px;font-weight:700;color:#fff;line-height:1;}
+.power-label{font-size:10px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.2em;margin-top:2px;}
+.rarity{font-size:12px;font-weight:700;padding:6px 16px;border-radius:999px;background:rgba(245,158,11,0.1);border:1.5px solid rgba(245,158,11,0.35);color:#b45309;}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.kpi{background:#f8f8fc;border:1px solid rgba(0,0,0,0.07);border-radius:12px;padding:16px 18px;}
+.kpi-val{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.5px;background:linear-gradient(135deg,#0066FF,#8A3FFC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:4px;}
+.kpi-label{font-size:12px;color:#9898b8;font-weight:500;line-height:1.3;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:12px;font-weight:700;padding:5px 13px;border-radius:999px;}
+.tag-blue{background:#e0ecff;color:#0066FF;}
+.tag-green{background:#d1fae5;color:#065f46;}
+.tag-purple{background:rgba(138,63,252,0.08);color:#8A3FFC;}
+.tag-gold{background:rgba(245,158,11,0.1);color:#b45309;}
+</style>
+</head>
+<body>
+<div class="left">
+  <div class="logo-row"><div class="logo-mark">MV</div><span class="logo-name">MVPly</span></div>
+  <div><div class="hey">Hey,</div><div class="name">Adrian<br>Kocur —</div><div class="subline">ich habe jemanden<br>für dich.</div></div>
+  <div class="bottom-tag">→ Nur für Entscheider · Kandidat anonym</div>
+</div>
+<div class="right">
+  <div class="power-row">
+    <div class="power-block"><div class="power-val">97</div><div class="power-label">PWR</div></div>
+    <div class="rarity">★ LEGENDARY · #GTM-001</div>
+  </div>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-val">€6,4M</div><div class="kpi-label">ARR von 0 aufgebaut</div></div>
+    <div class="kpi"><div class="kpi-val">+220%</div><div class="kpi-label">YoY-Wachstum (recorded)</div></div>
+    <div class="kpi"><div class="kpi-val">115%</div><div class="kpi-label">NRR · Mid-Market SaaS</div></div>
+    <div class="kpi"><div class="kpi-val">88%</div><div class="kpi-label">Fit Score · MVPly</div></div>
+  </div>
+  <div class="tags">
+    <span class="tag tag-blue">WbD zertifiziert</span>
+    <span class="tag tag-green">DSGVO-KI selbst gebaut</span>
+    <span class="tag tag-purple">DACH Marktaufbau</span>
+    <span class="tag tag-gold">Series B/C · Enterprise</span>
+  </div>
+</div>
+</body>
+</html>

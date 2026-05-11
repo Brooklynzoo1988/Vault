@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felix Bökhaus — Market Intelligence Brief | MVPly Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#0b0b0a;
+  --ink2:#3d3d39;
+  --ink3:#7a7a74;
+  --ink4:#b0b0aa;
+  --paper:#f7f6f1;
+  --card:#ffffff;
+  --gold:#b87e2a;
+  --gold-bg:#fdf4e3;
+  --gold-border:#e8cc94;
+  --teal:#0f6652;
+  --teal-bg:#e8f5f0;
+  --teal-border:#7fcbb8;
+  --amber:#9a5c10;
+  --amber-bg:#fef3e2;
+  --slate:#243040;
+  --slate-bg:#e8edf3;
+  --coral:#8a2a1a;
+  --coral-bg:#fdecea;
+  --line:rgba(11,11,10,0.08);
+  --line2:rgba(11,11,10,0.14);
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:'Geist',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.6;
+  min-height:100vh;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:0;
+  opacity:.4;
+}
+
+.page{
+  position:relative;
+  z-index:1;
+  max-width:860px;
+  margin:0 auto;
+  padding:48px 32px 100px;
+}
+
+/* ── HEADER ── */
+.top-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:56px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line2);
+}
+.logo{
+  font-family:'DM Mono',monospace;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--ink3);
+}
+.logo span{color:var(--ink)}
+.top-meta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.pill{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:4px 12px;
+  border-radius:2px;
+}
+.pill-gold{background:var(--gold-bg);color:var(--gold);border:1px solid var(--gold-border)}
+.pill-ink{background:var(--ink);color:var(--paper)}
+
+/* ── HERO ── */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 200px;
+  gap:48px;
+  align-items:start;
+  margin-bottom:64px;
+}
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+.hero-title{
+  font-family:'Instrument Serif',serif;
+  font-size:44px;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  margin-bottom:20px;
+}
+.hero-title em{
+  font-style:italic;
+  color:var(--gold);
+}
+.hero-desc{
+  font-size:15px;
+  color:var(--ink2);
+  line-height:1.7;
+  max-width:500px;
+}
+
+.score-widget{
+  background:var(--card);
+  border:1px solid var(--line2);
+  border-radius:4px;
+  padding:24px 20px;
+  text-align:center;
+}
+.score-widget .big{
+  font-family:'Instrument Serif',serif;
+  font-size:64px;
+  line-height:1;
+  color:var(--gold);
+  display:block;
+  margin-bottom:4px;
+}
+.score-widget .big-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink3);
+  margin-bottom:20px;
+  display:block;
+}
+.score-widget .sub{
+  font-size:12px;
+  color:var(--ink2);
+  line-height:1.5;
+}
+
+/* ── KPI STRIP ── */
+.kpi-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line2);
+  border:1px solid var(--line2);
+  border-radius:4px;
+  overflow:hidden;
+  margin-bottom:64px;
+}
+.kpi-cell{
+  background:var(--card);
+  padding:20px 18px;
+}
+.kpi-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink3);
+  margin-bottom:6px;
+}
+.kpi-value{
+  font-family:'Instrument Serif',serif;
+  font-size:28px;
+  line-height:1;
+  color:var(--ink);
+  margin-bottom:4px;
+}
+.kpi-sub{
+  font-size:11px;
+  color:var(--ink3);
+}
+
+/* ── SECTION HEADER ── */
+.section-header{
+  display:flex;
+  align-items:baseline;
+  gap:16px;
+  margin-bottom:28px;
+}
+.section-num{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink4);
+}
+.section-title{
+  font-family:'Instrument Serif',serif;
+  font-size:26px;
+  color:var(--ink);
+  letter-spacing:-.01em;
+}
+.section-line{
+  flex:1;
+  height:1px;
+  background:var(--line2);
+}
+
+/* ── COMPANY CARDS ── */
+.company-card{
+  background:var(--card);
+  border:1px solid var(--line2);
+  border-radius:4px;
+  margin-bottom:24px;
+  overflow:hidden;
+  transition:border-color .2s;
+}
+.company-card:hover{border-color:var(--line2);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+
+.card-head{
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  gap:0;
+  border-bottom:1px solid var(--line);
+}
+.card-rank{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-right:1px solid var(--line);
+  padding:20px 0;
+}
+.rank-num{
+  font-family:'Instrument Serif',serif;
+  font-size:32px;
+  color:var(--ink4);
+  line-height:1;
+}
+.card-title-block{
+  padding:18px 20px;
+}
+.company-name{
+  font-family:'Instrument Serif',serif;
+  font-size:21px;
+  color:var(--ink);
+  letter-spacing:-.01em;
+  margin-bottom:4px;
+}
+.company-subtitle{
+  font-size:12px;
+  color:var(--ink3);
+  margin-bottom:10px;
+}
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+}
+.tag{
+  font-size:10px;
+  font-weight:500;
+  padding:2px 8px;
+  border-radius:2px;
+  letter-spacing:.03em;
+}
+.tag-g{background:var(--teal-bg);color:var(--teal)}
+.tag-a{background:var(--amber-bg);color:var(--amber)}
+.tag-s{background:var(--slate-bg);color:var(--slate)}
+.tag-c{background:var(--coral-bg);color:var(--coral)}
+.tag-gold{background:var(--gold-bg);color:var(--gold)}
+
+.score-block{
+  padding:18px 24px;
+  border-left:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-width:100px;
+}
+.score-number{
+  font-family:'Instrument Serif',serif;
+  font-size:40px;
+  line-height:1;
+  margin-bottom:2px;
+}
+.score-denom{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  color:var(--ink3);
+  letter-spacing:.06em;
+}
+.score-bar-wrap{
+  width:64px;
+  height:3px;
+  background:var(--line2);
+  border-radius:2px;
+  margin-top:10px;
+  overflow:hidden;
+}
+.score-bar-fill{
+  height:100%;
+  border-radius:2px;
+}
+
+.card-body{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:0;
+}
+.card-section{
+  padding:20px 20px;
+  border-right:1px solid var(--line);
+}
+.card-section:last-child{border-right:none}
+
+.cs-label{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink3);
+  margin-bottom:10px;
+  padding-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+.cs-content{font-size:13px;color:var(--ink2);line-height:1.55}
+
+.signal-item{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  margin-bottom:7px;
+}
+.signal-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  flex-shrink:0;
+  margin-top:5px;
+}
+
+.hiring-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.06em;
+  padding:4px 10px;
+  border-radius:2px;
+  margin-bottom:8px;
+}
+.hb-active{background:var(--teal-bg);color:var(--teal)}
+.hb-hidden{background:var(--amber-bg);color:var(--amber)}
+.hb-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.hb-active .hb-dot{background:var(--teal)}
+.hb-hidden .hb-dot{background:var(--amber)}
+
+.fit-rows{display:flex;flex-direction:column;gap:7px;margin-top:2px}
+.fit-row{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--ink3)}
+.fit-row-label{width:76px;flex-shrink:0}
+.fit-row-bar{flex:1;height:2px;background:var(--line2);border-radius:1px;overflow:hidden}
+.fit-row-fill{height:100%;border-radius:1px}
+.fit-row-score{width:32px;text-align:right;font-family:'DM Mono',monospace;font-size:10px;color:var(--ink2)}
+
+.card-verdict{
+  padding:16px 20px;
+  border-top:1px solid var(--line);
+  background:var(--paper);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.verdict-icon{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  color:var(--gold);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  flex-shrink:0;
+  padding-top:1px;
+}
+.verdict-text{
+  font-size:13px;
+  color:var(--ink2);
+  line-height:1.6;
+  font-style:italic;
+}
+.verdict-text strong{font-style:normal;color:var(--ink);font-weight:500}
+
+/* ── ENTRY STRATEGY RIBBON ── */
+.entry-ribbon{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+  border-top:1px solid var(--line);
+  background:var(--card);
+}
+.entry-type{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink3);
+}
+.entry-action{
+  font-size:12px;
+  color:var(--ink2);
+}
+.entry-action strong{color:var(--ink);font-weight:500}
+
+/* ── FOOTER ── */
+.footer{
+  margin-top:64px;
+  padding-top:24px;
+  border-top:1px solid var(--line2);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.footer-left{
+  font-family:'DM Mono',monospace;
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--ink4);
+}
+.footer-right{
+  font-size:11px;
+  color:var(--ink3);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.hero{animation:fadeUp .6s ease both}
+.kpi-strip{animation:fadeUp .6s .1s ease both}
+.company-card:nth-child(1){animation:fadeUp .5s .15s ease both}
+.company-card:nth-child(2){animation:fadeUp .5s .22s ease both}
+.company-card:nth-child(3){animation:fadeUp .5s .29s ease both}
+.company-card:nth-child(4){animation:fadeUp .5s .36s ease both}
+.company-card:nth-child(5){animation:fadeUp .5s .43s ease both}
+
+/* ── SCORE COLORS ── */
+.c95{color:#1a5c3a}.c93{color:#0f6652}.c88{color:#7a4c08}.c85{color:#0f6652}.c83{color:#7a3210}
+.fill-95{background:#2d9e6b}.fill-93{background:#1D9E75}.fill-88{background:#c47a14}.fill-85{background:#2aab82}.fill-83{background:#c45520}
+.fit-95{background:#2d9e6b}.fit-93{background:#1D9E75}.fit-88{background:#c47a14}.fit-85{background:#2aab82}.fit-83{background:#c45520}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--line2);margin:48px 0}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="logo"><span>MVPly</span> Vault · Market Intelligence</div>
+    <div class="top-meta">
+      <span class="pill pill-gold">Legendary Tier</span>
+      <span class="pill pill-ink">EPIC #0048</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">Persönliches Brief — Vertraulich</div>
+      <h1 class="hero-title">
+        Deine 5 besten<br>
+        <em>Zielunternehmen</em><br>
+        im Markt.
+      </h1>
+      <p class="hero-desc">
+        Wir haben den Markt für dich durchleuchtet — nach Kapital-Signalen, Hiring-Momentum und technischer Synergie. Diese fünf Unternehmen suchen jemanden wie dich, auch wenn sie es noch nicht ausgeschrieben haben.
+      </p>
+    </div>
+    <div class="score-widget">
+      <span class="big">300%</span>
+      <span class="big-label">Quota Attainment</span>
+      <div class="sub">
+        €2.4M Neugeschäft<br>
+        50% des gesamten<br>
+        Company-Revenues<br>
+        <br>
+        <strong style="color:var(--ink);font-weight:500">10+ Jahre DACH<br>Enterprise Sales</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI STRIP -->
+  <div class="kpi-strip">
+    <div class="kpi-cell">
+      <div class="kpi-label">Ziel-ACV</div>
+      <div class="kpi-value">500k+</div>
+      <div class="kpi-sub">Enterprise Deals</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Sales Cycle</div>
+      <div class="kpi-value">12+ Mo</div>
+      <div class="kpi-sub">Complex Multi-Stakeholder</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Tech Stack</div>
+      <div class="kpi-value" style="font-size:18px;padding-top:5px">Azure · AWS</div>
+      <div class="kpi-sub">Databricks · IoT · AI</div>
+    </div>
+    <div class="kpi-cell">
+      <div class="kpi-label">Methodik</div>
+      <div class="kpi-value" style="font-size:18px;padding-top:5px">MEDDPICC</div>
+      <div class="kpi-sub">+ Engineering Background</div>
+    </div>
+  </div>
+
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <span class="section-num">Research · Mai 2026</span>
+    <h2 class="section-title">Die 5 Perfect-Match Targets</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- ── CARD 1: DATABRICKS ── -->
+  <div class="company-card">
+    <div class="card-head">
+      <div class="card-rank"><span class="rank-num">01</span></div>
+      <div class="card-title-block">
+        <div class="company-name">Databricks</div>
+        <div class="company-subtitle">The Data + AI Company · Munich / DACH · $10B+ ARR global</div>
+        <div class="tag-row">
+          <span class="tag tag-s">Data Infrastructure</span>
+          <span class="tag tag-g">Industrial AI</span>
+          <span class="tag tag-a">Manufacturing vertical</span>
+          <span class="tag tag-gold">München HQ</span>
+          <span class="tag tag-s">Active Hiring</span>
+        </div>
+      </div>
+      <div class="score-block">
+        <span class="score-number c95">95</span>
+        <span class="score-denom">/100 Fit</span>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill fill-95" style="width:95%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="cs-label">Das Signal — Warum jetzt</div>
+        <div class="cs-content">
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Enterprise AE DACH aktiv ausgeschrieben — München Glassdoor + Arbeitnow bestätigt (13 offene Rollen)</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>DevConnect 2026 macht Stopp München — DACH-Expansion mit voller Kraft</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Energy + Manufacturing Data Platform Launch: Databricks + Seeq + AVEVA als Joint GTM</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>60%+ der Fortune 500 als Kunden — jeder neue DACH-Deal kann 9-stellig werden</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Hiring Status</div>
+        <div class="cs-content">
+          <div class="hiring-badge hb-active"><span class="hb-dot"></span>AKTIV AUSGESCHRIEBEN</div>
+          <p>Enterprise Account Executive (DACH) — München. Reporting to Sales Director Germany. Fokus auf New Business im Lakehouse-Segment.</p>
+          <br>
+          <p style="color:var(--ink3);font-size:12px">Anforderung explizit: Manufacturing + Energy Vertikale, technisches Verständnis Data Engineering &amp; AI, MEDDPICC-Kenntnisse.</p>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Fit-Breakdown</div>
+        <div class="fit-rows">
+          <div class="fit-row">
+            <span class="fit-row-label">Tech Cred.</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-95" style="width:100%"></div></div>
+            <span class="fit-row-score">30/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ent. Muscle</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-95" style="width:93%"></div></div>
+            <span class="fit-row-score">28/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ind. Context</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-95" style="width:90%"></div></div>
+            <span class="fit-row-score">18/20</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Momentum</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-95" style="width:95%"></div></div>
+            <span class="fit-row-score">19/20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-verdict">
+      <span class="verdict-icon">↳ Match</span>
+      <p class="verdict-text">Du hast <strong>Databricks-basierte Datenarchitekturen bei Industriekunden auf Azure deployed</strong> — du bist der einzige AE, der dem Kunden-CTO technisch auf Augenhöhe begegnet und trotzdem fünf Minuten später den CFO-ROI-Case schließt. Kein Wettbewerber bringt das mit.</p>
+    </div>
+
+    <div class="entry-ribbon">
+      <span class="entry-type">Entry Strategy</span>
+      <span class="entry-action">Direktbewerbung via Careers-Page + <strong>LinkedIn Direktansprache Sales Director DACH</strong> mit konkreter 300%-Quota-Story als Opener</span>
+    </div>
+  </div>
+
+  <!-- ── CARD 2: COGNITE ── -->
+  <div class="company-card">
+    <div class="card-head">
+      <div class="card-rank"><span class="rank-num">02</span></div>
+      <div class="card-title-block">
+        <div class="company-name">Cognite</div>
+        <div class="company-subtitle">Industrial AI & Data Fusion · $338M raised · $117M ARR · $100B Customer Value Moonshot bis 2035</div>
+        <div class="tag-row">
+          <span class="tag tag-g">Industrial AI</span>
+          <span class="tag tag-s">OT/IT Convergence</span>
+          <span class="tag tag-a">Energy & Manufacturing</span>
+          <span class="tag tag-g">Azure + Snowflake Partner</span>
+          <span class="tag tag-gold">Hidden Opportunity</span>
+        </div>
+      </div>
+      <div class="score-block">
+        <span class="score-number c93">93</span>
+        <span class="score-denom">/100 Fit</span>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill fill-93" style="width:93%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="cs-label">Das Signal — Warum jetzt</div>
+        <div class="cs-content">
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>$117M ARR in 2025 — 168 Neueinstellungen allein 2024, 100+ offene Stellen zu Jahresbeginn 2025</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Neue Global HQ in Arizona eröffnet Dez 2025 — massive Expansionsphase</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Neuer MD Industry Solutions & Strategic Projects berufen Nov 2025 — Team-Umbau läuft</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Snowflake + NVIDIA + AWS Platinum Sponsor — stärkstes Ökosystem im Industrial AI Markt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Hiring Status</div>
+        <div class="cs-content">
+          <div class="hiring-badge hb-hidden"><span class="hb-dot"></span>HIDDEN OPPORTUNITY</div>
+          <p>Keine sichtbare DACH Senior-AE-Stelle — aber das Wachstum (3× in 2 Jahren) und das neue Industry-Solutions-Leadership signalisieren: Die Stelle existiert, sie ist nur noch nicht ausgeschrieben.</p>
+          <br>
+          <p style="color:var(--ink3);font-size:12px">Ziel: <strong style="color:var(--ink2)">Vor der Ausschreibung rein.</strong> Das ist der "First Look" Moment.</p>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Fit-Breakdown</div>
+        <div class="fit-rows">
+          <div class="fit-row">
+            <span class="fit-row-label">Tech Cred.</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-93" style="width:100%"></div></div>
+            <span class="fit-row-score">30/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ent. Muscle</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-93" style="width:97%"></div></div>
+            <span class="fit-row-score">29/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ind. Context</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-93" style="width:100%"></div></div>
+            <span class="fit-row-score">20/20</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Momentum</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-93" style="width:70%"></div></div>
+            <span class="fit-row-score">14/20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-verdict">
+      <span class="verdict-icon">↳ Match</span>
+      <p class="verdict-text">Cognite verkauft OT/IT-Konvergenz an Energie- und Maschinenbaukonzerne — <strong>exakt deine Kern-Verticals der letzten 10 Jahre</strong>. Deine KUKA-Erfahrung plus Databricks/Azure-Architektur-DNA ist das Proof-of-Concept, das jeder neue Cognite-AE erst in Jahren aufbauen müsste.</p>
+    </div>
+
+    <div class="entry-ribbon">
+      <span class="entry-type">Entry Strategy</span>
+      <span class="entry-action"><strong>Direktansprache CEO Girish Rishi</strong> oder neuer MD Amish Sabharwal — mit konkretem Marktverständnis DACH Industrie als Türöffner, nicht als Bewerbung</span>
+    </div>
+  </div>
+
+  <!-- ── CARD 3: SIGHT MACHINE ── -->
+  <div class="company-card">
+    <div class="card-head">
+      <div class="card-rank"><span class="rank-num">03</span></div>
+      <div class="card-title-block">
+        <div class="company-name">Sight Machine</div>
+        <div class="company-subtitle">Leading Industrial AI Platform · US Vendor · Fast Company World's Most Innovative 2026 · Hannover Messe April 2026</div>
+        <div class="tag-row">
+          <span class="tag tag-g">Manufacturing AI</span>
+          <span class="tag tag-s">Azure + Databricks</span>
+          <span class="tag tag-a">NVIDIA Partner</span>
+          <span class="tag tag-c">DACH Beachhead Signal</span>
+          <span class="tag tag-gold">Hidden Opportunity</span>
+        </div>
+      </div>
+      <div class="score-block">
+        <span class="score-number c88">88</span>
+        <span class="score-denom">/100 Fit</span>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill fill-88" style="width:88%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="cs-label">Das Signal — Warum jetzt</div>
+        <div class="cs-content">
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--amber)"></div>
+            <span>Hannover Messe April 2026: Demo-Partner im Microsoft-Booth für "Integrated Industrial AI Stack on Azure" — erstes DACH-Auftreten auf Top-Level</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--amber)"></div>
+            <span>Frisches VC-Investment September 2025 + Series D Jan 2024 — Kapital für Expansion vorhanden</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--amber)"></div>
+            <span>Microsoft Manufacturing Partner of the Year Finalist 2025 — Sales-Pipeline geht hoch</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--amber)"></div>
+            <span>Board-Mitglied Çağlayan Arkan (ex-Microsoft Manufacturing Global VP) — DE-Markt strategisch priorisiert</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Hiring Status</div>
+        <div class="cs-content">
+          <div class="hiring-badge hb-hidden"><span class="hb-dot"></span>HIDDEN — PRIME TIMING</div>
+          <p>Nur 66 Mitarbeiter global — kein DE-Team. Hannover Messe 2026 ist das klare Signal, dass sie den DACH-Markt ernstnehmen. Du wärst ihr <strong style="color:var(--ink)">erster Enterprise Hunter in Deutschland</strong> — vor jeder Ausschreibung.</p>
+          <br>
+          <p style="color:var(--ink3);font-size:12px">Opportunity-Typ: Founder-gesteuertes Gespräch, kein HR-Prozess.</p>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Fit-Breakdown</div>
+        <div class="fit-rows">
+          <div class="fit-row">
+            <span class="fit-row-label">Tech Cred.</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-88" style="width:100%"></div></div>
+            <span class="fit-row-score">30/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ent. Muscle</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-88" style="width:87%"></div></div>
+            <span class="fit-row-score">26/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ind. Context</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-88" style="width:100%"></div></div>
+            <span class="fit-row-score">20/20</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Momentum</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-88" style="width:60%"></div></div>
+            <span class="fit-row-score">12/20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-verdict">
+      <span class="verdict-icon">↳ Match</span>
+      <p class="verdict-text">Sight Machine baut exakt den "Integrated Industrial AI Stack on Azure + Databricks", <strong>den du jahrelang bei Industriekunden ausgerollt hast</strong>. Du wärst kein neuer AE, der das Produkt erst lernt — du bist der einzige DACH-Verkäufer, der dem Kunden-CTO am Tag 1 technisch begegnet.</p>
+    </div>
+
+    <div class="entry-ribbon">
+      <span class="entry-type">Entry Strategy</span>
+      <span class="entry-action"><strong>Direktansprache CEO Nathan Oostendorp</strong> — Anlass: Hannover Messe Follow-up. Pitch: "Ich bin euer DACH-Markt." Kein Bewerbungsschreiben, sondern ein Business Case.</span>
+    </div>
+  </div>
+
+  <!-- ── CARD 4: SEEQ ── -->
+  <div class="company-card">
+    <div class="card-head">
+      <div class="card-rank"><span class="rank-num">04</span></div>
+      <div class="card-title-block">
+        <div class="company-name">Seeq Corporation</div>
+        <div class="company-subtitle">Industrial Analytics & AI · $50M Series D Aug 2024 · LNS Research & Verdantix "Leader" 2025 · 36 Länder · Databricks + AVEVA Partner</div>
+        <div class="tag-row">
+          <span class="tag tag-g">Process Analytics</span>
+          <span class="tag tag-s">Databricks Partner</span>
+          <span class="tag tag-a">Energy & Chemicals</span>
+          <span class="tag tag-gold">Series D · $165M total</span>
+          <span class="tag tag-g">Europe Expansion</span>
+        </div>
+      </div>
+      <div class="score-block">
+        <span class="score-number c85">85</span>
+        <span class="score-denom">/100 Fit</span>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill fill-85" style="width:85%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="cs-label">Das Signal — Warum jetzt</div>
+        <div class="cs-content">
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>$50M Series D August 2024 — explizites Commitment für Europa + Asien Expansion bis Ende 2025</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>#1 LNS Research Front Runner Industrial AI Analytics Dez 2025 — Sales-Momentum auf dem Höchststand</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Neue CEO Lisa Graham an Board — klare Wachstumsagenda für neue Geographien</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--teal)"></div>
+            <span>Direkte Databricks-Partnerschaft + Databricks Energy Data Platform — dein Ökosystem</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Hiring Status</div>
+        <div class="cs-content">
+          <div class="hiring-badge hb-active"><span class="hb-dot"></span>AKTIV — EUROPE EXPANSION</div>
+          <p>Seeq baut direktes Sales-Team in Europa post-Series D. Job-Anforderung explizit: "Broad knowledge of SaaS industrial analytics ecosystem (Azure, Databricks, AVEVA, Cognite, C3.ai)" — das ist dein LinkedIn-Profil.</p>
+          <br>
+          <p style="color:var(--ink3);font-size:12px">Ziel: VP Sales EMEA direkt ansprechen, bevor die Rolle auf LinkedIn erscheint.</p>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Fit-Breakdown</div>
+        <div class="fit-rows">
+          <div class="fit-row">
+            <span class="fit-row-label">Tech Cred.</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-85" style="width:97%"></div></div>
+            <span class="fit-row-score">29/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ent. Muscle</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-85" style="width:87%"></div></div>
+            <span class="fit-row-score">26/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ind. Context</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-85" style="width:100%"></div></div>
+            <span class="fit-row-score">20/20</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Momentum</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-85" style="width:50%"></div></div>
+            <span class="fit-row-score">10/20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-verdict">
+      <span class="verdict-icon">↳ Match</span>
+      <p class="verdict-text">Seeqs größte Wachstumslücke ist der DACH-Markt. Energieversorger und Chemiekonzerne wie BASF, Siemens Energy und Wacker sind die primären Zielkunden — und <strong>du hast 10 Jahre Beziehungskapital in genau diesem Käuferkreis aufgebaut</strong>.</p>
+    </div>
+
+    <div class="entry-ribbon">
+      <span class="entry-type">Entry Strategy</span>
+      <span class="entry-action"><strong>VP Sales EMEA direktansprechen</strong> — Anknüpfungspunkt: Databricks Manufacturing Forum + Seeq-Integration als gemeinsame Referenz aus deiner eigenen Arbeit bei Device Insight</span>
+    </div>
+  </div>
+
+  <!-- ── CARD 5: TWAICE ── -->
+  <div class="company-card">
+    <div class="card-head">
+      <div class="card-rank"><span class="rank-num">05</span></div>
+      <div class="card-title-block">
+        <div class="company-name">TWAICE</div>
+        <div class="company-subtitle">Battery Analytics SaaS · München (TU München Spin-off) · €24M EIB Feb 2026 · BESS Umsatz 3× in 2025 · Kunden: Audi, Mercedes-Benz</div>
+        <div class="tag-row">
+          <span class="tag tag-g">Energy Storage</span>
+          <span class="tag tag-c">München-based</span>
+          <span class="tag tag-a">EV + BESS Analytics</span>
+          <span class="tag tag-gold">EIB-backed · Feb 2026</span>
+          <span class="tag tag-c">Home Run</span>
+        </div>
+      </div>
+      <div class="score-block">
+        <span class="score-number c83">83</span>
+        <span class="score-denom">/100 Fit</span>
+        <div class="score-bar-wrap">
+          <div class="score-bar-fill fill-83" style="width:83%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="card-section">
+        <div class="cs-label">Das Signal — Warum jetzt</div>
+        <div class="cs-content">
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--coral)"></div>
+            <span>€24M EIB Venture Debt Februar 2026 — frischestes Kapital in dieser Liste, direkt aus München</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--coral)"></div>
+            <span>BESS-Geschäft fast 3× in 2025 — Wachstum überholt die Sales-Kapazität, Hunter dringend gesucht</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--coral)"></div>
+            <span>Expansion Chicago + globale Fleet-Operations — Scale-up Phase mit internationalem Druck</span>
+          </div>
+          <div class="signal-item">
+            <div class="signal-dot" style="background:var(--coral)"></div>
+            <span>45% der BESS-Operatoren haben monatlich ungeplante Ausfälle — massiver Pain, klares Verkaufsargument</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Hiring Status</div>
+        <div class="cs-content">
+          <div class="hiring-badge hb-hidden"><span class="hb-dot"></span>HOME RUN — MÜNCHEN</div>
+          <p>TWAICE wächst explosiv, sitzt direkt in München und verkauft an Energieversorger + Automotive OEMs. Kein Senior Enterprise AE in der Pipeline sichtbar — und das Unternehmen ist zu klein, um sich einen mediokren zu leisten.</p>
+          <br>
+          <p style="color:var(--ink3);font-size:12px">Du kennst diese Buyer-Personas seit 10 Jahren persönlich.</p>
+        </div>
+      </div>
+
+      <div class="card-section">
+        <div class="cs-label">Fit-Breakdown</div>
+        <div class="fit-rows">
+          <div class="fit-row">
+            <span class="fit-row-label">Tech Cred.</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-83" style="width:87%"></div></div>
+            <span class="fit-row-score">26/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ent. Muscle</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-83" style="width:83%"></div></div>
+            <span class="fit-row-score">25/30</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Ind. Context</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-83" style="width:100%"></div></div>
+            <span class="fit-row-score">20/20</span>
+          </div>
+          <div class="fit-row">
+            <span class="fit-row-label">Momentum</span>
+            <div class="fit-row-bar"><div class="fit-row-fill fit-83" style="width:60%"></div></div>
+            <span class="fit-row-score">12/20</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-verdict">
+      <span class="verdict-icon">↳ Match</span>
+      <p class="verdict-text">TWAICE sitzt in München, hat €24M frisches Kapital, wächst 3× und braucht jemanden, der €500k+-Deals mit Energieversorgern und Automotive-OEMs schließen kann — <strong>das sind deine Kunden der letzten 10 Jahre</strong>. Kein Ramp-Up nötig. Day-1-Impact.</p>
+    </div>
+
+    <div class="entry-ribbon">
+      <span class="entry-type">Entry Strategy</span>
+      <span class="entry-action"><strong>Direktansprache Co-CEO Dr. Stephan Rohr</strong> — Anlass: EIB-Finanzierung + 3× Wachstum als Aufhänger. Pitch: Dein Automotive + Energy-Netzwerk in DACH als sofort aktivierbares Asset.</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">MVPly Vault · EPIC #0048 · Mai 2026</div>
+    <div class="footer-right">Research: Industrial AI, Energy Tech, Data Infrastructure · DACH / Global</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVPLY — Target Brief · LEGENDARY #0051</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg2: #f8f8fc;
+  --bg3: #f0f0f8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.15);
+  --text: #0a0a14;
+  --text2: #5a5a7a;
+  --text3: #9898b8;
+  --blue: #0066FF;
+  --blue-light: #e0ecff;
+  --blue-mid: #3385ff;
+  --purple: #8A3FFC;
+  --gold: #f59e0b;
+  --green: #00c96b;
+  --red: #ef4444;
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'Cabinet Grotesk', sans-serif;
+  --r: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg2);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+}
+.page { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; }
+
+/* TOPBAR */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  flex-wrap: wrap; gap: 10px;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  letter-spacing: -0.5px; text-decoration: none; color: var(--text);
+}
+.logo-mark {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: #fff; font-weight: 800;
+}
+.topbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: var(--r-pill);
+}
+.badge-legendary { background: rgba(245,158,11,0.12); color: var(--gold); border: 1.5px solid rgba(245,158,11,0.35); }
+.badge-conf { background: rgba(245,158,11,0.1); color: var(--gold); border: 1.5px solid rgba(245,158,11,0.3); }
+.badge-ver { background: rgba(0,201,107,0.1); color: var(--green); border: 1.5px solid rgba(0,201,107,0.3); }
+
+/* MAIN CARD */
+.main-card {
+  background: #fff;
+  border: 1.5px solid rgba(245,158,11,0.35);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  overflow: hidden;
+  animation: fadeUp 0.55s ease 0.05s both;
+}
+.topbar { animation: fadeUp 0.4s ease both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.rarity-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), #fbbf24, var(--gold));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* HERO */
+.hero {
+  padding: 36px 40px 32px;
+  display: flex; gap: 32px; align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+}
+.avatar-col { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.avatar-wrap {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #fbbf24);
+  padding: 2.5px; position: relative;
+}
+.avatar-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: var(--bg2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  color: var(--text); letter-spacing: -1px;
+}
+.avatar-check {
+  position: absolute; bottom: 1px; right: 1px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--green); border: 2px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #fff; font-weight: 800;
+}
+.rarity-pill {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 4px 13px; border-radius: var(--r-pill);
+  background: rgba(245,158,11,0.12); color: var(--gold);
+  border: 1.5px solid rgba(245,158,11,0.35);
+}
+.cid { font-size: 10px; color: var(--text3); font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+
+.hero-info { flex: 1; min-width: 0; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-light); color: var(--blue);
+  border-radius: var(--r-pill); padding: 4px 13px;
+  font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 700; letter-spacing: -1px; line-height: 1.05;
+  margin-bottom: 6px;
+}
+.hero-title .grad {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub { font-size: 14px; color: var(--text2); margin-bottom: 18px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.4px;
+  padding: 4px 12px; border-radius: var(--r-pill);
+  background: var(--bg3); color: var(--text2); border: 1px solid var(--border);
+}
+
+/* KPI */
+.kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; }
+.kpi { background: var(--bg2); border: 1.5px solid var(--border); border-radius: var(--r); padding: 12px 14px; }
+.kpi-label { font-size: 9px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.kpi-val { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1; }
+.kpi-val.blue { color: var(--blue); }
+.kpi-val.green { color: var(--green); }
+.kpi-val.gold { color: var(--gold); }
+.kpi-val.purple { color: var(--purple); }
+.kpi-hint { font-size: 10px; color: var(--text3); margin-top: 2px; }
+
+/* SECTION */
+.section { padding: 26px 40px; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.sec-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* TARGET CARDS */
+.targets-grid { display: flex; flex-direction: column; gap: 14px; }
+.target-card {
+  border-radius: var(--r-lg); border: 1.5px solid var(--border);
+  background: var(--bg2); overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.target-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.target-card-inner { display: flex; align-items: stretch; }
+.rank-col {
+  width: 56px; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; padding: 16px 0; background: #fff;
+  border-right: 1px solid var(--border);
+}
+.rank-num { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1; }
+.fit-score {
+  font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: var(--r-pill);
+  letter-spacing: 0.3px;
+}
+.target-body { flex: 1; padding: 14px 18px 12px; }
+.target-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
+.company-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; margin: 0 0 2px; color: var(--text); text-decoration: none; }
+.company-name:hover { color: var(--blue); }
+.role-title { font-size: 12px; color: var(--text2); margin: 0; }
+.signal-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-pill); white-space: nowrap; flex-shrink: 0;
+}
+.target-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.target-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: var(--r-pill);
+  background: #fff; color: var(--text2); border: 1px solid var(--border);
+}
+.target-meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+.meta-item { font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 5px; }
+.meta-label { font-weight: 700; color: var(--text3); text-transform: uppercase; font-size: 10px; letter-spacing: 0.5px; }
+
+/* OTE METER */
+.ote-block { margin-top: 10px; }
+.ote-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.ote-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); }
+.ote-values { display: flex; align-items: baseline; gap: 6px; }
+.ote-range { font-size: 12px; font-weight: 700; color: var(--text2); }
+.ote-target-val { font-family: var(--font-display); font-size: 14px; font-weight: 700; }
+.ote-pct { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: var(--r-pill); }
+.track { height: 7px; background: var(--bg3); border-radius: 99px; position: relative; overflow: visible; margin-bottom: 5px; }
+.track-fill { height: 100%; border-radius: 99px; transition: width 0.8s ease; }
+.track-marker {
+  position: absolute; top: -3px; width: 2px; height: 13px;
+  background: var(--text3); border-radius: 1px;
+}
+.track-notes { display: flex; justify-content: space-between; font-size: 9px; color: var(--text3); font-weight: 700; letter-spacing: 0.3px; }
+.live-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); margin-right: 4px; vertical-align: middle;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* WHY STRIP */
+.why-strip {
+  padding: 10px 18px 12px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text2); line-height: 1.65;
+}
+.why-strip strong { color: var(--text); font-weight: 700; }
+
+/* VERIFIED STRIP */
+.verified-strip {
+  padding: 13px 40px;
+  background: rgba(0,201,107,0.06);
+  border-top: 1px solid rgba(0,201,107,0.18);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.verified-text { font-size: 11px; color: var(--green); font-weight: 700; letter-spacing: 0.4px; }
+.verified-sep { width: 1px; height: 12px; background: rgba(0,201,107,0.3); flex-shrink: 0; }
+
+/* FOOTER */
+.footer-info {
+  padding: 24px 40px;
+  background: linear-gradient(135deg, rgba(0,102,255,0.04), rgba(138,63,252,0.04));
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.f-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 3px; }
+.f-sub { font-size: 13px; color: var(--text2); }
+.btn-apply {
+  background: var(--blue); color: #fff; border: none;
+  padding: 11px 24px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 800; cursor: pointer;
+  font-family: var(--font-body); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+}
+.btn-apply:hover { background: var(--blue-mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,102,255,0.3); }
+
+/* LEGEND */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .hero { flex-direction: column; padding: 24px; }
+  .kpi-row { grid-template-columns: repeat(2,1fr); }
+  .section { padding: 20px 20px; }
+  .verified-strip, .footer-info { padding: 14px 20px; }
+  .target-card-inner { flex-direction: column; }
+  .rank-col { width: 100%; flex-direction: row; justify-content: flex-start; padding: 10px 16px; border-right: none; border-bottom: 1px solid var(--border); gap: 10px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="https://mvply.de" target="_blank" class="nav-logo">
+      <div class="logo-mark">M</div>
+      MVPLY
+    </a>
+    <div class="topbar-right">
+      <span class="badge badge-conf">⚠ Vertraulich</span>
+      <span class="badge badge-legendary">⭐ Legendary #0051</span>
+      <span class="badge badge-ver">✓ Verifiziert</span>
+    </div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="main-card">
+    <div class="rarity-bar"></div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="avatar-col">
+        <div class="avatar-wrap">
+          <div class="avatar-inner">NZ</div>
+          <div class="avatar-check">✓</div>
+        </div>
+        <div class="rarity-pill">⭐ LEGENDARY</div>
+        <div class="cid">Vault #0051<br>Mai 2026</div>
+      </div>
+      <div class="hero-info">
+        <div class="eyebrow">Strategic Enterprise Sales · DACH</div>
+        <div class="hero-title">
+          <span class="grad">SaaS · Security · Cloud</span>
+        </div>
+        <div class="hero-sub">10 Jahre Enterprise B2B · Cisco Specialized Sales · EMBA laufend · Basel, Schweiz</div>
+        <div class="tags">
+          <span class="tag">MEDDPICC</span>
+          <span class="tag">Cisco SASE &amp; Cybersecurity</span>
+          <span class="tag">DACH &amp; Schweizer Markt</span>
+          <span class="tag">Salesforce · Clay · AI-Native</span>
+          <span class="tag">Fully Remote</span>
+          <span class="tag">In 1 Monat verfügbar</span>
+          <span class="tag">3 Sprachen</span>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi">
+            <div class="kpi-label">OTE-Ziel</div>
+            <div class="kpi-val gold">CHF 250K</div>
+            <div class="kpi-hint">Verhandelbar</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">ACV Deal Size</div>
+            <div class="kpi-val blue">CHF 250K+</div>
+            <div class="kpi-hint">Enterprise</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Sales Cycle</div>
+            <div class="kpi-val purple">6–12 Mo</div>
+            <div class="kpi-hint">Multi-Stakeholder</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-label">Quota Attainment</div>
+            <div class="kpi-val green">200%</div>
+            <div class="kpi-hint">Ø 3 Jahre</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OTE LEGEND SECTION -->
+    <div class="section">
+      <div class="sec-label">OTE Realitäts-Check · CHF 250K Ziel vs. Markt</div>
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--green);"></div>250K+ erreichbar (≥100%)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Knapp drunter (80–99%)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div>Unter Ziel (&lt;80%)</div>
+        <div class="legend-item" style="margin-left:auto;font-size:11px;color:var(--text3);">Quellen: RepVue · Glassdoor · CH-Marktdaten Mai 2026</div>
+      </div>
+
+      <!-- TARGETS -->
+      <div class="targets-grid">
+
+        <!-- 1 WIZ -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,201,107,0.06);">
+              <span class="rank-num" style="color:#00a855;">#1</span>
+              <span class="fit-score" style="background:rgba(0,201,107,0.15);color:#007a3d;">99</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div>
+                  <a href="https://www.wiz.io/careers/job/4445265006/enterprise-account-executive-dach-germany" target="_blank" class="company-name">Wiz ↗</a>
+                  <p class="role-title">Enterprise Account Executive — DACH (Deutschland / Schweiz)</p>
+                </div>
+                <span class="signal-badge" style="background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.35);">$32B Google-Deal</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Cloud Security · CSPM · CNAPP</span>
+                <span class="target-tag">50%+ Fortune 100</span>
+                <span class="target-tag"><span class="live-dot"></span>Stelle offen</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Marktdaten (Enterprise AE)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">$265K – $320K</span>
+                    <span class="ote-pct" style="background:rgba(0,201,107,0.15);color:#007a3d;">106–128%</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,var(--green),#4ade80);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/320 - 1px);" title="CHF 250K Ziel"></div>
+                </div>
+                <div class="track-notes"><span>$0</span><span>▲ CHF 250K Ziel</span><span>$320K Max</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum jetzt:</strong> Post-Google-Akquisition läuft DACH-Expansion auf Hochtouren. Cisco-Background = direktes CISO-Level Credibility. OTE liegt <strong>strukturell über CHF 250K</strong> — Ziel ist ohne Stretch erreichbar.</div>
+        </div>
+
+        <!-- 2 ZSCALER -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,102,255,0.06);">
+              <span class="rank-num" style="color:var(--blue);">#2</span>
+              <span class="fit-score" style="background:rgba(0,102,255,0.12);color:#0044cc;">97</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div>
+                  <a href="https://www.zscaler.com/careers/search" target="_blank" class="company-name">Zscaler ↗</a>
+                  <p class="role-title">Senior AE Large Enterprise — Switzerland (Remote)</p>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,102,255,0.1);color:var(--blue);border:1px solid rgba(0,102,255,0.25);">NASDAQ: ZS</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Zero Trust · SASE · ZIA/ZPA</span>
+                <span class="target-tag">10× Gartner MQ Leader</span>
+                <span class="target-tag"><span class="live-dot"></span>Stelle offen</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Marktdaten (Enterprise AE)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">$270K – $320K</span>
+                    <span class="ote-pct" style="background:rgba(0,201,107,0.15);color:#007a3d;">108–128%</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,var(--blue),#60a5fa);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/320 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>$0</span><span>▲ CHF 250K Ziel</span><span>$320K Max</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum jetzt:</strong> Zscaler Schweiz-Rolle 100% Remote. Cisco SASE-Zertifizierung = er kennt den direkten Konkurrenten von innen. AV-Quota ~41% hier — mit dem vorliegenden Track Record realistisch. OTE <strong>klar über CHF 250K</strong>.</div>
+        </div>
+
+        <!-- 3 RUBRIK -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(245,158,11,0.06);">
+              <span class="rank-num" style="color:var(--gold);">#3</span>
+              <span class="fit-score" style="background:rgba(245,158,11,0.15);color:#b45309;">95</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div>
+                  <a href="https://www.rubrik.com/company/careers/departments/sales" target="_blank" class="company-name">Rubrik ↗</a>
+                  <p class="role-title">Account Executive Switzerland — Zürich</p>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,201,107,0.1);color:var(--green);border:1px solid rgba(0,201,107,0.3);">NYSE: RBRK</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Zero Trust Data Security</span>
+                <span class="target-tag">133% NRR · Land &amp; Expand</span>
+                <span class="target-tag"><span class="live-dot"></span>Stelle offen Zürich</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Schätzung (AE Switzerland · Mid-Market/ENT)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">CHF 220K – 270K</span>
+                    <span class="ote-pct" style="background:rgba(245,158,11,0.15);color:#b45309;">88–108%</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:92%;background:linear-gradient(90deg,var(--gold),#fbbf24);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/270 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>CHF 0</span><span>▲ CHF 250K Ziel</span><span>CHF 270K Max</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum jetzt:</strong> Stelle explizit für Zürich ausgeschrieben, Deutsch Muttersprache Pflicht. OTE am unteren Ende grenzwertig — <strong>mit dem vorliegenden Track Record und Verhandlungsposition jedoch durchaus CHF 250K+ verhandelbar</strong>. Datacenter + Channel Know-how = sofortiger Value-Add.</div>
+        </div>
+
+        <!-- 4 CATO NETWORKS -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(138,63,252,0.06);">
+              <span class="rank-num" style="color:var(--purple);">#4</span>
+              <span class="fit-score" style="background:rgba(138,63,252,0.12);color:#6d2fcb;">93</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div>
+                  <a href="https://www.catonetworks.com/careers/" target="_blank" class="company-name">Cato Networks ↗</a>
+                  <p class="role-title">Senior / Major Account Executive — DACH / EMEA (Remote)</p>
+                </div>
+                <span class="signal-badge" style="background:rgba(138,63,252,0.1);color:var(--purple);border:1px solid rgba(138,63,252,0.3);">IPO-Kandidat 2026</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">SASE Cloud · SD-WAN · AI Security</span>
+                <span class="target-tag">$4.8B · $300M+ ARR</span>
+                <span class="target-tag">Pre-IPO Equity</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Schätzung (Senior AE DACH · Pre-IPO)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">CHF 200K – 260K + Equity</span>
+                    <span class="ote-pct" style="background:rgba(245,158,11,0.15);color:#b45309;">80–104%</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:96%;background:linear-gradient(90deg,var(--purple),#c084fc);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/260 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>CHF 0</span><span>▲ CHF 250K Ziel</span><span>CHF 260K + Equity</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum jetzt:</strong> OTE-Cash liegt knapp an der Grenze — <strong>Pre-IPO Equity bei $4.8B Valuation kompensiert das jedoch signifikant</strong>. Cisco Fire Jumper SASE-Zertifizierung = einzigartiger Competitive Intel Vorteil. Cato kennen heisst: er weiss bereits wie man gegen sich selbst verkauft.</div>
+        </div>
+
+        <!-- 5 NETSKOPE -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,102,255,0.04);">
+              <span class="rank-num" style="color:#3385ff;">#5</span>
+              <span class="fit-score" style="background:rgba(0,102,255,0.1);color:#1a56db;">91</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div>
+                  <a href="https://www.netskope.com/company/careers" target="_blank" class="company-name">Netskope ↗</a>
+                  <p class="role-title">Senior Enterprise Account Executive — DACH / Switzerland</p>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,201,107,0.1);color:var(--green);border:1px solid rgba(0,201,107,0.3);">NASDAQ: NTSK</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">SASE · SSE · CASB · AI-Security</span>
+                <span class="target-tag">$9.6B Market Cap</span>
+                <span class="target-tag">Post-IPO Sep 2025</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Marktdaten (Enterprise AE)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">$280K – $320K</span>
+                    <span class="ote-pct" style="background:rgba(0,201,107,0.15);color:#007a3d;">112–128%</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,#3385ff,#60a5fa);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/320 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>$0</span><span>▲ CHF 250K Ziel</span><span>$320K Max</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum jetzt:</strong> OTE strukturell <strong>am stärksten aller 5 Targets</strong> — $280–320K. Caveat: nur 33% Quota Attainment bei Netskope laut RepVue. Der vorliegende 200%-Attainment-Track-Record ist hier der entscheidende Differenziator. Basel = direkter Zugang zu Roche, Novartis, UBS ohne Ramp-Up.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+</body>
+</html>

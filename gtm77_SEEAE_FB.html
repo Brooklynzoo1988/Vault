@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVPLY — Frank Bergmann · 5 Zielunternehmen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg2: #f8f8fc;
+  --bg3: #f0f0f8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.15);
+  --text: #0a0a14;
+  --text2: #5a5a7a;
+  --text3: #9898b8;
+  --blue: #0066FF;
+  --blue-light: #e0ecff;
+  --blue-mid: #3385ff;
+  --purple: #8A3FFC;
+  --gold: #f59e0b;
+  --green: #00c96b;
+  --red: #ef4444;
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'Cabinet Grotesk', sans-serif;
+  --r: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg2);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 40px 20px 80px;
+}
+.page { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; }
+
+/* ── TOPBAR ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  flex-wrap: wrap; gap: 10px;
+  animation: fadeUp 0.4s ease both;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  letter-spacing: -0.5px; text-decoration: none; color: var(--text);
+}
+.logo-mark {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: #fff; font-weight: 800;
+}
+.topbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: var(--r-pill);
+}
+.badge-conf { background: rgba(245,158,11,0.1); color: var(--gold); border: 1.5px solid rgba(245,158,11,0.3); }
+.badge-ver { background: rgba(0,201,107,0.1); color: var(--green); border: 1.5px solid rgba(0,201,107,0.3); }
+.badge-blue { background: rgba(0,102,255,0.1); color: var(--blue); border: 1.5px solid rgba(0,102,255,0.25); }
+
+/* ── MAIN CARD ── */
+.main-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  overflow: hidden;
+  animation: fadeUp 0.55s ease 0.05s both;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+.accent-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--blue));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* ── GREETING ── */
+.greeting {
+  padding: 36px 40px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px;
+}
+.greeting-left {}
+.hey-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-light); color: var(--blue);
+  border-radius: var(--r-pill); padding: 4px 13px;
+  font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.greeting-title {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 700; letter-spacing: -1.5px; line-height: 1.05;
+  margin-bottom: 8px;
+}
+.greeting-title .grad {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.greeting-sub { font-size: 14px; color: var(--text2); max-width: 480px; }
+
+
+
+/* ── SECTION ── */
+.section { padding: 28px 40px; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.sec-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── LEGEND ── */
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text2); }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── TARGET CARDS ── */
+.targets-grid { display: flex; flex-direction: column; gap: 14px; }
+.target-card {
+  border-radius: var(--r-lg); border: 1.5px solid var(--border);
+  background: var(--bg2); overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.target-card:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.09); }
+.target-card-inner { display: flex; align-items: stretch; }
+
+.rank-col {
+  width: 58px; flex-shrink: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; padding: 16px 0; background: #fff;
+  border-right: 1px solid var(--border);
+}
+.rank-num { font-family: var(--font-display); font-size: 22px; font-weight: 700; line-height: 1; }
+.fit-score {
+  font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: var(--r-pill);
+  letter-spacing: 0.3px;
+}
+
+.target-body { flex: 1; padding: 14px 20px 12px; min-width: 0; }
+.target-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 8px; gap: 8px; }
+.company-name-wrap {}
+.company-name {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  color: var(--text); text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+}
+.company-name:hover { color: var(--blue); }
+.il-flag {
+  font-size: 14px; display: inline-block; vertical-align: middle;
+}
+.role-title { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.signal-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--r-pill); white-space: nowrap; flex-shrink: 0;
+}
+
+.target-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.target-tag {
+  font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: var(--r-pill);
+  background: #fff; color: var(--text2); border: 1px solid var(--border);
+}
+
+/* ── OTE METER ── */
+.ote-block { margin-top: 8px; }
+.ote-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.ote-label { font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); }
+.ote-values { display: flex; align-items: baseline; gap: 6px; }
+.ote-range { font-size: 12px; font-weight: 700; color: var(--text2); }
+.ote-pct { font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: var(--r-pill); }
+.track { height: 7px; background: var(--bg3); border-radius: 99px; position: relative; overflow: visible; margin-bottom: 5px; }
+.track-fill { height: 100%; border-radius: 99px; transition: width 1s ease; }
+.track-marker { position: absolute; top: -3px; width: 2px; height: 13px; background: var(--text3); border-radius: 1px; }
+.track-notes { display: flex; justify-content: space-between; font-size: 9px; color: var(--text3); font-weight: 700; letter-spacing: 0.3px; }
+
+.live-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); margin-right: 4px; vertical-align: middle;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── WHY STRIP ── */
+.why-strip {
+  padding: 10px 20px 12px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text2); line-height: 1.65;
+}
+.why-strip strong { color: var(--text); font-weight: 700; }
+
+
+
+/* ── FOOTER CTA ── */
+.footer-cta {
+  padding: 28px 40px;
+  background: linear-gradient(135deg, rgba(0,102,255,0.04), rgba(138,63,252,0.04));
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.f-title { font-family: var(--font-display); font-size: 16px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 3px; }
+.f-sub { font-size: 13px; color: var(--text2); }
+.btn-primary {
+  background: var(--blue); color: #fff; border: none;
+  padding: 11px 26px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 800; cursor: pointer;
+  font-family: var(--font-body); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,102,255,0.3); }
+
+@media (max-width: 640px) {
+  .greeting { padding: 24px 20px; }
+  .greeting-title { font-size: 28px; }
+  .kpi-row { grid-template-columns: repeat(2,1fr); padding: 20px; }
+  .section { padding: 20px; }
+  .target-card-inner { flex-direction: column; }
+  .rank-col { width: 100%; flex-direction: row; justify-content: flex-start; padding: 10px 16px; border-right: none; border-bottom: 1px solid var(--border); gap: 10px; }
+  .footer-cta { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="https://mvply.de" target="_blank" class="nav-logo">
+      <div class="logo-mark">M</div>
+      MVPLY
+    </a>
+    <div class="topbar-right">
+      <span class="badge badge-conf">⚠ Vertraulich</span>
+      <span class="badge badge-blue">Senior Enterprise AE · DACH</span>
+      <span class="badge badge-ver">✓ Mai 2026</span>
+    </div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="main-card">
+    <div class="accent-bar"></div>
+
+    <!-- GREETING -->
+    <div class="greeting">
+      <div class="greeting-left">
+        <div class="hey-label">🎯 Dein persönlicher Target Brief</div>
+        <div class="greeting-title">Hey Frank, hier sind<br><span class="grad">deine 5 Zielunternehmen.</span></div>
+        <div class="greeting-sub">Alle mit starkem Product-Market-Fit, frischem Funding und einer realen Enterprise AE Rolle im DACH-Raum — vollständig remote aus Nürnberg.</div>
+      </div>
+    </div>
+
+
+
+    <!-- TARGETS SECTION -->
+    <div class="section">
+      <div class="sec-label">5 Zielunternehmen · PMF-qualifiziert · Funding verifiziert · Stand Mai 2026</div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--green);"></div>OTE 250k+ erreichbar</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Verhandelbar / Equity-kompensiert</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--blue);"></div>🇮🇱 Israelisches Startup</div>
+        <div class="legend-item" style="margin-left:auto;font-size:11px;color:var(--text3);">Quellen: Crunchbase · RepVue · JD-Recherche</div>
+      </div>
+
+      <div class="targets-grid">
+
+        <!-- 1: CHAINGUARD -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,201,107,0.06);">
+              <span class="rank-num" style="color:#00a855;">#1</span>
+              <span class="fit-score" style="background:rgba(0,201,107,0.15);color:#007a3d;">97</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div class="company-name-wrap">
+                  <div class="company-name">Chainguard</div>
+                  <div class="role-title">Enterprise Account Executive — Germany (Remote) · $612M Funding · $3.5B Val.</div>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,201,107,0.1);color:#007a3d;border:1px solid rgba(0,201,107,0.3);"><span class="live-dot"></span>Stelle aktiv offen</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Secure Container Images · Zero-CVE</span>
+                <span class="target-tag">OpenAI · Snowflake · Canva · Fortinet Kunde</span>
+                <span class="target-tag">Sequoia · Kleiner Perkins · IVP · Accel</span>
+                <span class="target-tag">$280M · Okt. 2025</span>
+                <span class="target-tag">Platform Eng. + DevSecOps Buyer</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Enterprise AE Germany</span>
+                  <div class="ote-values">
+                    <span class="ote-range">250k – 320k €</span>
+                    <span class="ote-pct" style="background:rgba(0,201,107,0.15);color:#007a3d;">✓ Floor erreichbar</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,var(--green),#4ade80);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/320 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>0</span><span>▲ 250k Floor</span><span>320k+ möglich</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum #1:</strong> Stelle ist aktiv für Germany ausgeschrieben. Chainguard's Buyer ist Platform Engineer + Security — exakt deine StackGuardian-DNA. <strong>Siemens und Fresenius als referenzierbare Logos</strong> sind entscheidend, weil beide klassische Zero-Trust + Compliance-Käufer sind. PMF stark: OpenAI, Snowflake, Canva. $280M Funding → kein Runway-Risiko.</div>
+        </div>
+
+        <!-- 2: SCALEOPS -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,102,255,0.06);">
+              <span class="rank-num" style="color:var(--blue);">#2</span>
+              <span class="fit-score" style="background:rgba(0,102,255,0.12);color:#0044cc;">94</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div class="company-name-wrap">
+                  <div class="company-name">ScaleOps <span class="il-flag" title="Israelisches Startup">🇮🇱</span></div>
+                  <div class="role-title">Enterprise AE — EMEA (Remote) · $210M Funding · $800M+ Val. · Tel Aviv gegründet</div>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,102,255,0.1);color:var(--blue);border:1px solid rgba(0,102,255,0.25);">🔥 Series C · März 2026</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Kubernetes · GPU · Cloud Cost Automation</span>
+                <span class="target-tag">Adobe · DocuSign · Wiz · Salesforce Kunde</span>
+                <span class="target-tag">Insight Partners · Lightspeed · Glilot Capital</span>
+                <span class="target-tag">350% YoY Wachstum</span>
+                <span class="target-tag">EMEA noch nicht besetzt</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Enterprise AE EMEA · Post-Series C</span>
+                  <div class="ote-values">
+                    <span class="ote-range">240k – 300k € + Equity</span>
+                    <span class="ote-pct" style="background:rgba(0,102,255,0.12);color:#0044cc;">Equity signifikant</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:96%;background:linear-gradient(90deg,var(--blue),#60a5fa);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/300 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>0</span><span>▲ 250k Floor</span><span>300k Ziel</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum #2:</strong> Israelisches Startup mit $130M frischem Capital (März 2026) und 350% YoY. Dein StackGuardian-Background ist 1:1 kompatibel: gleicher Kubernetes-Buyer, gleiche Cost-Reduction-Story. <strong>EMEA ist eine weiße Fläche</strong> — erster AE dort ist automatisch ein Greenfield-Play mit viel Upside.</div>
+        </div>
+
+        <!-- 3: N8N -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(138,63,252,0.06);">
+              <span class="rank-num" style="color:var(--purple);">#3</span>
+              <span class="fit-score" style="background:rgba(138,63,252,0.12);color:#6d2fcb;">91</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div class="company-name-wrap">
+                  <div class="company-name">n8n</div>
+                  <div class="role-title">Enterprise AE — DACH (Remote, Berlin HQ) · $2.5B Val. · $180M Series C · Oktober 2025</div>
+                </div>
+                <span class="signal-badge" style="background:rgba(138,63,252,0.1);color:var(--purple);border:1px solid rgba(138,63,252,0.3);"><span class="live-dot"></span>Stelle aktiv · DACH-Fokus</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">AI Workflow Orchestration · Open-Source Enterprise</span>
+                <span class="target-tag">Vodafone · Delivery Hero · Microsoft Kunde</span>
+                <span class="target-tag">Accel · NVIDIA · Deutsche Telekom T.Capital</span>
+                <span class="target-tag">10× YoY Usage-Wachstum</span>
+                <span class="target-tag">Berlin HQ · Deutsches Unicorn</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Enterprise AE DACH (JD verifiziert)</span>
+                  <div class="ote-values">
+                    <span class="ote-range">250k – 300k € + Equity</span>
+                    <span class="ote-pct" style="background:rgba(138,63,252,0.12);color:#6d2fcb;">Floor erreichbar</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,var(--purple),#c084fc);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/300 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>0</span><span>▲ 250k Floor</span><span>300k Ziel</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum #3:</strong> Deutsches Unicorn mit $2.5B, NVIDIA + Deutsche Telekom als Investoren. Stelle ist <strong>aktiv mit explizitem DACH-Fokus ausgeschrieben</strong>. Der Buyer ist Technical Lead / IT Director — dein natürlicher Gesprächspartner. PMF-Signal: 10× YoY Usage-Growth. ⚠ ACV 50–200k — Acceleratoren und Quota-Sizing im Gespräch klären.</div>
+        </div>
+
+        <!-- 4: SPACELIFT -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(245,158,11,0.06);">
+              <span class="rank-num" style="color:var(--gold);">#4</span>
+              <span class="fit-score" style="background:rgba(245,158,11,0.15);color:#b45309;">88</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div class="company-name-wrap">
+                  <div class="company-name">Spacelift</div>
+                  <div class="role-title">Senior Enterprise AE — EMEA / DACH · $73.6M Funding · 149 MA · Redwood City / Warschau</div>
+                </div>
+                <span class="signal-badge" style="background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.35);">SVP Sales neu · Mai 2026</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">IaC Orchestration · Terraform · OpenTofu · Ansible</span>
+                <span class="target-tag">Duolingo · Figma · Moody's · 1Password Kunde</span>
+                <span class="target-tag">Five Elms Capital · Insight Partners</span>
+                <span class="target-tag">FedRAMP · Sept. 2025</span>
+                <span class="target-tag">DACH noch unbebaut</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Senior AE EMEA · Verhandlungssache</span>
+                  <div class="ote-values">
+                    <span class="ote-range">240k – 300k € + Equity</span>
+                    <span class="ote-pct" style="background:rgba(245,158,11,0.15);color:#b45309;">Verhandelbar</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:90%;background:linear-gradient(90deg,var(--gold),#fbbf24);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/300 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>0</span><span>▲ 250k Floor</span><span>300k Ziel</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum #4:</strong> Produkt-DNA-Match ist perfekt — du kennst Spacelift von der anderen Seite (StackGuardian-Wettbewerb) und weißt alle Differenziatoren. <strong>SVP Sales ist brandneu (März 2026)</strong> und baut aktiv auf — idealer Zeitpunkt für ein direktes Outbound-Manöver. OTE-Verhandlung direkt mit Archer führen.</div>
+        </div>
+
+        <!-- 5: PORT.IO -->
+        <div class="target-card">
+          <div class="target-card-inner">
+            <div class="rank-col" style="background:rgba(0,0,0,0.03);">
+              <span class="rank-num" style="color:#444;">#5</span>
+              <span class="fit-score" style="background:rgba(0,0,0,0.07);color:#555;border:1px solid rgba(0,0,0,0.12);">84</span>
+            </div>
+            <div class="target-body">
+              <div class="target-head">
+                <div class="company-name-wrap">
+                  <div class="company-name">Port.io <span class="il-flag" title="Israelisches Startup">🇮🇱</span></div>
+                  <div class="role-title">Enterprise AE — EMEA (Proaktives Outbound Play) · $100M Series C · $800M Val. · Tel Aviv</div>
+                </div>
+                <span class="signal-badge" style="background:rgba(0,0,0,0.06);color:#555;border:1px solid rgba(0,0,0,0.12);">Series C · Dez. 2025</span>
+              </div>
+              <div class="target-tags">
+                <span class="target-tag">Agentic Engineering Platform · IDP → AI Orchestration</span>
+                <span class="target-tag">GitHub · British Telecom · Visa Kunde</span>
+                <span class="target-tag">General Atlantic · TLV Partners</span>
+                <span class="target-tag">300% Revenue-Wachstum 2025</span>
+                <span class="target-tag">EMEA noch keine Stelle ausgeschrieben</span>
+              </div>
+              <div class="ote-block">
+                <div class="ote-header">
+                  <span class="ote-label">OTE Enterprise AE EMEA · Schätzung</span>
+                  <div class="ote-values">
+                    <span class="ote-range">260k – 320k € + Equity</span>
+                    <span class="ote-pct" style="background:rgba(0,0,0,0.07);color:#555;border:1px solid rgba(0,0,0,0.1);">Proaktiv verhandeln</span>
+                  </div>
+                </div>
+                <div class="track">
+                  <div class="track-fill" style="width:100%;background:linear-gradient(90deg,#888,#aaa);"></div>
+                  <div class="track-marker" style="left:calc(100% * 250/320 - 1px);"></div>
+                </div>
+                <div class="track-notes"><span>0</span><span>▲ 250k Floor</span><span>320k+ mit Equity</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="why-strip"><strong>Warum #5:</strong> Israelisches Hypergrowth-Startup, $100M Series C (General Atlantic, Dez. 2025), 300% Revenue YoY. <strong>EMEA-Rolle noch nicht ausgeschrieben</strong> — das ist ein proaktives Outbound-Play, kein reaktiver Bewerbungsprozess. Port's Buyer ist Head of Platform Engineering — dein natürlichster Gesprächspartner aus 2+ Jahren StackGuardian. Timing: jetzt, bevor die Stelle öffentlich wird.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+</body>
+</html>

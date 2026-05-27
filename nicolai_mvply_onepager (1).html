@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MVPLY — Candidate Brief · LEGENDARY #0049</title>
+<meta property="og:title" content="Strategic Enterprise AE · MVPLY Vault #0049" />
+<meta property="og:description" content="200% Quota · CHF 1.5M Deal Closed · Cisco Specialized Sales · Basel, Schweiz · Security · Cloud · Networking · DACH" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Strategic Enterprise AE · MVPLY Vault #0049" />
+<meta name="twitter:description" content="200% Quota · CHF 1.5M Deal · Cisco Specialized Sales · DACH" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg2: #f8f8fc;
+  --bg3: #f0f0f8;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.15);
+  --text: #0a0a14;
+  --text2: #5a5a7a;
+  --text3: #9898b8;
+  --blue: #0066FF;
+  --blue-light: #e0ecff;
+  --blue-mid: #3385ff;
+  --purple: #8A3FFC;
+  --gold: #f59e0b;
+  --green: #00c96b;
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'Cabinet Grotesk', sans-serif;
+  --r: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: linear-gradient(160deg, #f5f0ff 0%, #fdf6ee 40%, #eef3ff 100%);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.page { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; }
+@media print {
+  body { background: linear-gradient(160deg, #f5f0ff 0%, #fdf6ee 40%, #eef3ff 100%) !important; }
+  .section { break-inside: avoid; }
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 28px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-bottom: none;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  flex-wrap: wrap; gap: 10px;
+  animation: fadeUp 0.4s ease both;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  letter-spacing: -0.5px; text-decoration: none; color: inherit;
+}
+.logo-mark {
+  width: 30px; height: 30px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: #fff; font-weight: 800;
+}
+.topbar-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: var(--r-pill);
+}
+.badge-legendary { background: rgba(245,158,11,0.12); color: var(--gold); border: 1.5px solid rgba(245,158,11,0.35); }
+.badge-conf      { background: rgba(245,158,11,0.1);  color: var(--gold);  border: 1.5px solid rgba(245,158,11,0.3); }
+.badge-ver       { background: rgba(0,201,107,0.1);   color: var(--green); border: 1.5px solid rgba(0,201,107,0.3); }
+
+/* ── LANG SWITCH ── */
+.lang-switch {
+  display: flex;
+  border: 1.5px solid var(--border2); border-radius: var(--r-pill); overflow: hidden;
+  margin-left: 6px;
+}
+.lang-btn {
+  padding: 4px 13px; font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+  border: none; background: transparent; color: var(--text2);
+  cursor: pointer; font-family: var(--font-body); transition: all 0.18s;
+}
+.lang-btn.active { background: var(--blue); color: #fff; }
+
+/* ── MAIN CARD ── */
+.main-card {
+  background: #fff;
+  border: 1.5px solid rgba(245,158,11,0.4);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  overflow: hidden;
+  animation: fadeUp 0.55s ease 0.05s both;
+}
+.rarity-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), #fbbf24, var(--gold));
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* ── THUMBNAIL HERO ── */
+.thumbnail-hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #0a0a14 0%, #12124a 50%, #1a0a30 100%);
+  padding: 44px 40px 36px;
+  border-bottom: 1px solid var(--border);
+}
+.thumb-bg-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,102,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,102,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.thumb-glow1 {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,102,255,0.18) 0%, transparent 70%);
+  top: -150px; right: -80px; pointer-events: none;
+}
+.thumb-glow2 {
+  position: absolute; width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
+  bottom: -100px; left: -50px; pointer-events: none;
+}
+.thumb-inner {
+  position: relative; z-index: 1;
+  display: flex; gap: 28px; align-items: flex-start;
+}
+.thumb-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.thumb-avatar-wrap {
+  width: 84px; height: 84px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #f97316);
+  padding: 2.5px; position: relative;
+}
+.thumb-avatar-inner {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: #1a1a3a;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 24px; font-weight: 700;
+  color: #fff; letter-spacing: -1px;
+}
+.thumb-check {
+  position: absolute; bottom: 1px; right: 1px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--green); border: 2px solid #1a1a3a;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #fff; font-weight: 800;
+}
+.thumb-legendary-pill {
+  font-size: 9px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 4px 11px; border-radius: var(--r-pill);
+  background: rgba(245,158,11,0.2); color: var(--gold);
+  border: 1.5px solid rgba(245,158,11,0.45); white-space: nowrap;
+}
+.thumb-cid { font-size: 9px; color: rgba(255,255,255,0.35); font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+
+.thumb-right { flex: 1; min-width: 0; }
+.thumb-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,102,255,0.2); color: #60a5fa;
+  border-radius: var(--r-pill); padding: 4px 13px;
+  font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.thumb-title {
+  font-family: var(--font-display);
+  font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 1.05;
+  color: #fff; margin-bottom: 5px;
+}
+.thumb-title .grad {
+  background: linear-gradient(135deg, var(--gold), #fb923c);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.thumb-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+.thumb-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.thumb-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.4px;
+  padding: 3px 10px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.thumb-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.thumb-stat {
+  background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: var(--r); padding: 10px 12px;
+}
+.thumb-stat-label { font-size: 9px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 3px; }
+.thumb-stat-val { font-family: var(--font-display); font-size: 20px; font-weight: 700; line-height: 1; }
+.thumb-stat-val.gold   { color: var(--gold); }
+.thumb-stat-val.blue   { color: #60a5fa; }
+.thumb-stat-val.green  { color: var(--green); }
+.thumb-stat-hint { font-size: 9px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+
+/* ── LINKEDIN BUTTON ── */
+.linkedin-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 16px;
+  background: #0077b5; color: #fff;
+  border-radius: var(--r-pill); padding: 8px 18px;
+  font-size: 12px; font-weight: 800; letter-spacing: 0.3px;
+  text-decoration: none; transition: all 0.2s;
+  border: none; cursor: pointer;
+}
+.linkedin-btn:hover { background: #005fa3; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,119,181,0.35); }
+.linkedin-icon { font-size: 14px; }
+
+/* ── SECTION ── */
+.section { padding: 26px 40px; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.sec-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sec-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── REVENUE PERFORMANCE ── */
+.rev-numbers {
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: 32px; margin-bottom: 28px; flex-wrap: wrap; text-align: center;
+}
+.rev-num-block { text-align: center; }
+.rev-num-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 6px;
+}
+.rev-big {
+  font-family: var(--font-display); font-size: 44px; font-weight: 700;
+  letter-spacing: -2px; line-height: 1;
+}
+.rev-big.neutral { color: var(--text); }
+.rev-big.blue    { color: var(--blue); }
+.rev-big.gold    { color: var(--gold); }
+.rev-arrow {
+  font-family: var(--font-display); font-size: 24px; font-weight: 700;
+  color: var(--text3); padding-bottom: 8px;
+}
+.rev-bar-wrap { background: var(--bg3); border-radius: 999px; height: 10px; overflow: visible; position: relative; margin-bottom: 10px; }
+.rev-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), #fbbf24); border-radius: 999px; width: 100%; }
+.rev-bar-labels { display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: var(--text3); }
+
+/* ── STATS GRID ── */
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); margin-top: 14px; }
+.stat-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.stats-grid .stat-row:nth-last-child(-n+2) { border-bottom: none; }
+.stat-icon { font-size: 14px; }
+.stat-key { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--text3); }
+.stat-val { font-size: 12px; font-weight: 700; color: var(--text); }
+
+/* ── DNA ── */
+.dna-quote {
+  font-size: 15px; color: var(--text2); line-height: 1.75; font-style: italic;
+  border-left: 3px solid var(--gold); padding-left: 18px; margin-bottom: 14px;
+}
+.dna-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.dna-tag {
+  font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: var(--r-pill);
+  background: rgba(245,158,11,0.1); color: var(--gold); border: 1px solid rgba(245,158,11,0.25);
+}
+
+/* ── METHOD ── */
+.method-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.method-pill {
+  font-size: 12px; font-weight: 700; padding: 6px 16px; border-radius: var(--r-pill); border: 1.5px solid;
+}
+.method-pill.primary { background: rgba(0,102,255,0.08); color: var(--blue); border-color: rgba(0,102,255,0.35); }
+.method-pill.gold    { background: rgba(245,158,11,0.08); color: var(--gold); border-color: rgba(245,158,11,0.35); }
+.method-pill.ghost   { background: var(--bg3); color: var(--text2); border-color: var(--border2); }
+
+/* ── CERTS ── */
+.certs-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.cert-pill {
+  display: flex; align-items: center; gap: 7px;
+  background: var(--bg2); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 7px 13px;
+  font-size: 12px; font-weight: 700; color: var(--text);
+}
+.cert-icon { font-size: 15px; }
+
+/* ── DEAL GRID ── */
+.deal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.deal-card {
+  background: var(--bg2); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 14px 16px;
+}
+.deal-card-label { font-size: 9px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; }
+.deal-card-body { font-size: 13px; color: var(--text2); line-height: 1.55; }
+.deal-card-body strong { color: var(--text); font-weight: 700; }
+
+/* ── TARGET GRID ── */
+.target-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.target-item {
+  background: var(--bg2); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 14px 16px; text-align: center;
+}
+.target-icon { font-size: 22px; margin-bottom: 6px; }
+.target-name { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.target-detail { font-size: 11px; color: var(--text3); line-height: 1.4; }
+
+/* ── LANGUAGES ── */
+.lang-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.lang-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg2); border: 1.5px solid var(--border);
+  border-radius: var(--r); padding: 8px 14px;
+}
+.lang-flag { font-size: 20px; }
+.lang-name { font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.1; }
+.lang-level { font-size: 10px; color: var(--text3); font-weight: 600; }
+
+/* ── VERIFIED STRIP ── */
+.verified-strip {
+  padding: 13px 40px;
+  background: rgba(0,201,107,0.06);
+  border-top: 1px solid rgba(0,201,107,0.18);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.verified-text { font-size: 11px; color: var(--green); font-weight: 700; letter-spacing: 0.4px; }
+.verified-sep { width: 1px; height: 12px; background: rgba(0,201,107,0.3); flex-shrink: 0; }
+
+/* ── FOOTER ── */
+.footer-info {
+  padding: 24px 40px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.04), rgba(138,63,252,0.04));
+  display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+.f-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 3px; }
+.f-sub { font-size: 13px; color: var(--text2); }
+.footer-legal { font-size: 10px; color: var(--text3); }
+.btn-primary {
+  background: var(--gold); color: #fff; border: none;
+  padding: 10px 24px; border-radius: var(--r-pill);
+  font-size: 13px; font-weight: 800; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  text-decoration: none; transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.btn-primary:hover { background: #d97706; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(245,158,11,0.35); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+@media (max-width: 640px) {
+  .thumb-inner { flex-direction: column; }
+  .thumb-stats { grid-template-columns: repeat(2,1fr); }
+  .deal-grid, .target-grid { grid-template-columns: 1fr; }
+  .section { padding: 22px 20px; }
+  .verified-strip, .footer-info { padding: 16px 20px; }
+  .rev-numbers { gap: 16px; }
+  .rev-big { font-size: 34px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <a href="https://mvply.de" target="_blank" rel="noopener" class="nav-logo">
+      <div class="logo-mark">M</div>
+      MVPLY
+    </a>
+    <div class="topbar-right">
+      <span class="badge badge-conf" data-de="⚠ Vertraulich" data-en="⚠ Confidential">⚠ Vertraulich</span>
+      <span class="badge badge-legendary">⭐ Legendary #0049</span>
+      <span class="badge badge-ver" data-de="✓ Verifiziert" data-en="✓ Verified">✓ Verifiziert</span>
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('de')">DE</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="main-card">
+    <div class="rarity-bar"></div>
+
+    <!-- THUMBNAIL HERO (dark) -->
+    <div class="thumbnail-hero">
+      <div class="thumb-bg-grid"></div>
+      <div class="thumb-glow1"></div>
+      <div class="thumb-glow2"></div>
+      <div class="thumb-inner">
+        <div class="thumb-left">
+          <div class="thumb-avatar-wrap">
+            <div class="thumb-avatar-inner">NZ</div>
+            <div class="thumb-check">✓</div>
+          </div>
+          <div class="thumb-legendary-pill">⭐ LEGENDARY</div>
+          <div class="thumb-cid">Vault #0049<br>Mai 2026</div>
+        </div>
+        <div class="thumb-right">
+          <div class="thumb-eyebrow" data-de="Enterprise Sales · DACH / Schweiz" data-en="Enterprise Sales · DACH / Switzerland">Enterprise Sales · DACH / Schweiz</div>
+          <div class="thumb-title" data-de="Hier ist jemand<br><span class='grad'>für dich.</span>" data-en="Here's someone<br><span class='grad'>for you.">Hier ist jemand<br><span class="grad">für dich.</span></div>
+          <div class="thumb-sub" data-de="Strategic Enterprise AE · Basel, Schweiz · 1 Monat Kündigungsfrist" data-en="Strategic Enterprise AE · Basel, Switzerland · 1 Month Notice">Strategic Enterprise AE · Basel, Schweiz · 1 Monat Kündigungsfrist</div>
+          <div class="thumb-tags">
+            <span class="thumb-tag">Cisco Specialized Sales</span>
+            <span class="thumb-tag">Cybersecurity · SASE</span>
+            <span class="thumb-tag">Networking · Cloud</span>
+            <span class="thumb-tag">MEDDPICC</span>
+            <span class="thumb-tag" data-de="EMBA im Gang" data-en="EMBA in Progress">EMBA im Gang</span>
+            <span class="thumb-tag" data-de="3 Sprachen" data-en="3 Languages">3 Sprachen</span>
+          </div>
+          <div class="thumb-stats">
+            <div class="thumb-stat">
+              <div class="thumb-stat-label" data-de="Quota Attainment" data-en="Quota Attainment">Quota Attainment</div>
+              <div class="thumb-stat-val gold">200%</div>
+              <div class="thumb-stat-hint" data-de="letztes Jahr" data-en="last year">letztes Jahr</div>
+            </div>
+            <div class="thumb-stat">
+              <div class="thumb-stat-label" data-de="Grösster Deal" data-en="Largest Deal">Grösster Deal</div>
+              <div class="thumb-stat-val blue">1.5M</div>
+              <div class="thumb-stat-hint">CHF · Mehrjahresvertrag</div>
+            </div>
+            <div class="thumb-stat">
+              <div class="thumb-stat-label" data-de="Renewals" data-en="Renewals">Renewals</div>
+              <div class="thumb-stat-val green">95%</div>
+              <div class="thumb-stat-hint" data-de="Verlängerungsquote" data-en="Renewal Rate">Verlängerungsquote</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVENUE PERFORMANCE -->
+    <div class="section">
+      <div class="sec-label" data-de="Revenue Performance · Sunrise GmbH (2023–2026)" data-en="Revenue Performance · Sunrise GmbH (2023–2026)">Revenue Performance · Sunrise GmbH (2023–2026)</div>
+      <div class="rev-numbers">
+        <div class="rev-num-block">
+          <div class="rev-num-label" data-de="Portfolio Start" data-en="Portfolio Start">Portfolio Start</div>
+          <div class="rev-big neutral">€3.8M</div>
+        </div>
+        <div class="rev-arrow">→</div>
+        <div class="rev-num-block">
+          <div class="rev-num-label" data-de="Portfolio Ende" data-en="Portfolio End">Portfolio Ende</div>
+          <div class="rev-big blue">€5.0M</div>
+        </div>
+        <div class="rev-arrow">=</div>
+        <div class="rev-num-block">
+          <div class="rev-num-label" data-de="Portfolio Wachstum" data-en="Portfolio Growth">Portfolio Wachstum</div>
+          <div class="rev-big gold">+28%</div>
+        </div>
+      </div>
+      <div class="rev-bar-wrap">
+        <div class="rev-bar-fill"></div>
+        <div style="position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:800;color:var(--gold);white-space:nowrap;">⭐ 200% Quota · 12% YoY Growth</div>
+      </div>
+      <div class="rev-bar-labels">
+        <span>2023</span>
+        <span data-de="€1.2M Neugeschäft · 15 neue Opportunitäten" data-en="€1.2M New Business · 15 New Opportunities">€1.2M Neugeschäft · 15 neue Opportunitäten</span>
+        <span>2026</span>
+      </div>
+    </div>
+
+    <!-- STATS GRID -->
+    <div class="section" style="padding-top:22px;padding-bottom:22px;">
+      <div class="stats-grid" style="border-top:none;margin-top:0;">
+        <div class="stat-row"><div class="stat-icon">🎯</div><div><div class="stat-key" data-de="Segment" data-en="Segment">Segment</div><div class="stat-val" data-de="Strategic / Enterprise Accounts" data-en="Strategic / Enterprise Accounts">Strategic / Enterprise Accounts</div></div></div>
+        <div class="stat-row"><div class="stat-icon">🏭</div><div><div class="stat-key" data-de="Vertikal" data-en="Vertical">Vertikal</div><div class="stat-val" data-de="Pharma · Industrie · Financial Services" data-en="Pharma · Industry · Financial Services">Pharma · Industrie · Financial Services</div></div></div>
+        <div class="stat-row"><div class="stat-icon">🌍</div><div><div class="stat-key" data-de="Markt" data-en="Market">Markt</div><div class="stat-val" data-de="Schweiz · DACH · Deutsch / DE" data-en="Switzerland · DACH · German-speaking">Schweiz · DACH · Deutsch / DE</div></div></div>
+        <div class="stat-row"><div class="stat-icon">🤝</div><div><div class="stat-key" data-de="Deal Complexity" data-en="Deal Complexity">Deal Complexity</div><div class="stat-val" data-de="Multi-Stakeholder · C-Level Zugang" data-en="Multi-Stakeholder · C-Level Access">Multi-Stakeholder · C-Level Zugang</div></div></div>
+        <div class="stat-row"><div class="stat-icon">💼</div><div><div class="stat-key" data-de="CRM Stack" data-en="CRM Stack">CRM Stack</div><div class="stat-val">Salesforce · MS Dynamics · Clay</div></div></div>
+        <div class="stat-row"><div class="stat-icon">⏱️</div><div><div class="stat-key" data-de="Sales Cycle" data-en="Sales Cycle">Sales Cycle</div><div class="stat-val" data-de="6–12 Monate · komplex" data-en="6–12 Months · Complex">6–12 Monate · komplex</div></div></div>
+        <div class="stat-row"><div class="stat-icon">📍</div><div><div class="stat-key" data-de="Standort" data-en="Location">Standort</div><div class="stat-val" data-de="Basel, Schweiz · Remote-ready" data-en="Basel, Switzerland · Remote-ready">Basel, Schweiz · Remote-ready</div></div></div>
+        <div class="stat-row"><div class="stat-icon">⚡</div><div><div class="stat-key" data-de="Verfügbarkeit" data-en="Availability">Verfügbarkeit</div><div class="stat-val" data-de="1 Monat Kündigungsfrist" data-en="1 Month Notice Period">1 Monat Kündigungsfrist</div></div></div>
+      </div>
+    </div>
+
+    <!-- SALES DNA -->
+    <div class="section">
+      <div class="sec-label" data-de="Sales DNA · Was Nicolai unterscheidet" data-en="Sales DNA · What Sets Nicolai Apart">Sales DNA · Was Nicolai unterscheidet</div>
+      <div class="dna-quote">
+        <span data-de="Drei Dinge. Erstens das menschliche Handwerk: Ich lese Menschen, ich höre was zwischen den Zeilen gesagt wird, und ich baue Vertrauen schneller auf als die meisten — vor allem auf C-Level. Zweitens die technische Glaubwürdigkeit: Cisco Specialized Sales, AI Business Practitioner, SASE, Cybersecurity. Ich kann mit einem CIO über AI-Strategie reden und im selben Termin mit einem Engineer an einem POC mitdenken. Drittens Builder-Mindset: Ich habe selbst ein B2B SaaS gebaut. Ich verkaufe nicht nur Software — das verändert, wie ich am Tisch beim Kunden auftrete." data-en="Three things. First, the human craft: I read people, I hear what's said between the lines, and I build trust faster than most — especially at C-level. Second, technical credibility: Cisco Specialized Sales, AI Business Practitioner, SASE, Cybersecurity. I can talk AI strategy with a CIO and think through a POC with an engineer in the same meeting. Third, builder mindset: I built a B2B SaaS myself. I don't just sell software — that changes how I show up at the customer's table.">Drei Dinge. Erstens das menschliche Handwerk: Ich lese Menschen, ich höre was zwischen den Zeilen gesagt wird, und ich baue Vertrauen schneller auf als die meisten — vor allem auf C-Level. Zweitens die technische Glaubwürdigkeit: Cisco Specialized Sales, AI Business Practitioner, SASE, Cybersecurity. Ich kann mit einem CIO über AI-Strategie reden und im selben Termin mit einem Engineer an einem POC mitdenken. Drittens Builder-Mindset: Ich habe selbst ein B2B SaaS gebaut. Ich verkaufe nicht nur Software — das verändert, wie ich am Tisch beim Kunden auftrete.</span>
+      </div>
+      <div class="dna-tags">
+        <span class="dna-tag" data-de="C-Level Trust Builder" data-en="C-Level Trust Builder">C-Level Trust Builder</span>
+        <span class="dna-tag" data-de="Technische Glaubwürdigkeit" data-en="Technical Credibility">Technische Glaubwürdigkeit</span>
+        <span class="dna-tag" data-de="Builder Mindset" data-en="Builder Mindset">Builder Mindset</span>
+        <span class="dna-tag" data-de="AI-nativer Sales-Workflow" data-en="AI-Native Sales Workflow">AI-nativer Sales-Workflow</span>
+        <span class="dna-tag" data-de="POC-Steuerung" data-en="POC Management">POC-Steuerung</span>
+        <span class="dna-tag" data-de="Value-Based Positioning" data-en="Value-Based Positioning">Value-Based Positioning</span>
+      </div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div class="section">
+      <div class="sec-label" data-de="Verkaufsmethodik" data-en="Sales Methodology">Verkaufsmethodik</div>
+      <div class="method-row">
+        <span class="method-pill gold">MEDDPICC</span>
+        <span class="method-pill primary" data-de="Value Selling" data-en="Value Selling">Value Selling</span>
+        <span class="method-pill primary" data-de="Solution Selling" data-en="Solution Selling">Solution Selling</span>
+        <span class="method-pill ghost" data-de="POC gegen Erfolgskriterien" data-en="POC against Success Criteria">POC gegen Erfolgskriterien</span>
+        <span class="method-pill ghost" data-de="Business Case Erstellung" data-en="Business Case Creation">Business Case Erstellung</span>
+        <span class="method-pill ghost" data-de="Multi-Thread Deals" data-en="Multi-Thread Deals">Multi-Thread Deals</span>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+      <div class="sec-label" data-de="Zertifizierungen & Tools" data-en="Certifications & Tools">Zertifizierungen & Tools</div>
+      <div class="certs-grid">
+        <div class="cert-pill"><span class="cert-icon">🔐</span><span>Cisco AI Business Practitioner</span></div>
+        <div class="cert-pill"><span class="cert-icon">🔐</span><span>Cisco Fire Jumper (SASE · Cyber)</span></div>
+        <div class="cert-pill"><span class="cert-icon">🔐</span><span>Cisco Meraki FIT Level 2</span></div>
+        <div class="cert-pill"><span class="cert-icon">🛡️</span><span>Fortinet FCF Cybersecurity</span></div>
+        <div class="cert-pill"><span class="cert-icon">🎓</span><span>Executive MBA (laufend)</span></div>
+        <div class="cert-pill"><span class="cert-icon">🤖</span><span>Claude · ChatGPT · Clay.com</span></div>
+      </div>
+    </div>
+
+    <!-- DEAL MECHANICS -->
+    <div class="section">
+      <div class="sec-label" data-de="Deal Mechanics · Warum er gewinnt" data-en="Deal Mechanics · Why He Wins">Deal Mechanics · Warum er gewinnt</div>
+      <div class="deal-grid">
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="Cisco Specialized Sales (PAF)" data-en="Cisco Specialized Sales (PAF)">Cisco Specialized Sales (PAF)</div>
+          <div class="deal-card-body">
+            <span data-de="Ausgewählt für <strong>Cisco Partner Activity Fund</strong> — steuert aktiv Cisco-Wachstumsinitiativen in SASE, Industrial IoT und Secure Networking. Kein gewöhnlicher Reseller-Verkäufer." data-en="Selected for <strong>Cisco Partner Activity Fund</strong> — actively steering Cisco growth initiatives in SASE, Industrial IoT and Secure Networking. Not your average reseller rep.">Ausgewählt für <strong>Cisco Partner Activity Fund</strong> — steuert aktiv Cisco-Wachstumsinitiativen in SASE, Industrial IoT und Secure Networking. Kein gewöhnlicher Reseller-Verkäufer.</span>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="Greenfield Builder" data-en="Greenfield Builder">Greenfield Builder</div>
+          <div class="deal-card-body">
+            <span data-de="Baut aktuell bei ITRIS One ein <strong>Enterprise-Portfolio von Null</strong> auf. Hat bei Sunrise in 3 Jahren 15 Neugeschäftsopportunitäten identifiziert und geschlossen — ohne SDR-Support." data-en="Currently building an <strong>Enterprise portfolio from zero</strong> at ITRIS One. At Sunrise, identified and closed 15 new business opportunities in 3 years — without SDR support.">Baut aktuell bei ITRIS One ein <strong>Enterprise-Portfolio von Null</strong> auf. Hat bei Sunrise in 3 Jahren 15 Neugeschäftsopportunitäten identifiziert und geschlossen — ohne SDR-Support.</span>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="AI-nativer Sales Workflow" data-en="AI-Native Sales Workflow">AI-nativer Sales Workflow</div>
+          <div class="deal-card-body">
+            <span data-de="Nutzt <strong>Clay, Claude und ChatGPT</strong> täglich für Prospecting, Account-Recherche und Kundenmaterialien. Arbeitet strukturierter und schneller als 90% seiner Peers." data-en="Uses <strong>Clay, Claude and ChatGPT</strong> daily for prospecting, account research and customer materials. Works more structured and faster than 90% of his peers.">Nutzt <strong>Clay, Claude und ChatGPT</strong> täglich für Prospecting, Account-Recherche und Kundenmaterialien. Arbeitet strukturierter und schneller als 90% seiner Peers.</span>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="CHF 1.5M Deals · Mehrjährig" data-en="CHF 1.5M Deals · Multi-Year">CHF 1.5M Deals · Mehrjährig</div>
+          <div class="deal-card-body">
+            <span data-de="Schliesst Deals bis <strong>CHF 1.5 Mio.</strong> über 6–12 Monate. UCaaS, Cloud Connectivity, Managed Workplace — strukturierte Business Cases, 95% Verlängerungsquote." data-en="Closes deals up to <strong>CHF 1.5M</strong> over 6–12 months. UCaaS, Cloud Connectivity, Managed Workplace — structured business cases, 95% renewal rate.">Schliesst Deals bis <strong>CHF 1.5 Mio.</strong> über 6–12 Monate. UCaaS, Cloud Connectivity, Managed Workplace — strukturierte Business Cases, 95% Verlängerungsquote.</span>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="Dreisprachig · Schweizer Markt" data-en="Trilingual · Swiss Market">Dreisprachig · Schweizer Markt</div>
+          <div class="deal-card-body">
+            <span data-de="<strong>Deutsch (Muttersprache), Italienisch (Muttersprache), Englisch (C1)</strong> — deckt den Schweizer Markt nativ ab. Kein Overlay, keine Barrieren, direkter Kundenzugang." data-en="<strong>German (native), Italian (native), English (C1)</strong> — covers the Swiss market natively. No overlay, no barriers, direct customer access."><strong>Deutsch (Muttersprache), Italienisch (Muttersprache), Englisch (C1)</strong> — deckt den Schweizer Markt nativ ab. Kein Overlay, keine Barrieren, direkter Kundenzugang.</span>
+          </div>
+        </div>
+        <div class="deal-card">
+          <div class="deal-card-label" data-de="Co-Founder Background" data-en="Co-Founder Background">Co-Founder Background</div>
+          <div class="deal-card-body">
+            <span data-de="Hat selbst ein <strong>B2B SaaS gebaut</strong> (Codevelop / Tendaro). Versteht Product, GTM und Kundenprobleme aus Gründerperspektive — das macht ihn zu einem anderen Gesprächspartner auf C-Level." data-en="Built his own <strong>B2B SaaS</strong> (Codevelop / Tendaro). Understands product, GTM and customer problems from a founder perspective — that makes him a different conversation partner at C-level.">Hat selbst ein <strong>B2B SaaS gebaut</strong> (Codevelop / Tendaro). Versteht Product, GTM und Kundenprobleme aus Gründerperspektive — das macht ihn zu einem anderen Gesprächspartner auf C-Level.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IDEAL FIT -->
+    <div class="section">
+      <div class="sec-label" data-de="Ideal Company Fit" data-en="Ideal Company Fit">Ideal Company Fit</div>
+      <div class="target-grid">
+        <div class="target-item">
+          <div class="target-icon">☁️</div>
+          <div class="target-name" data-de="SaaS / IT / Cloud" data-en="SaaS / IT / Cloud">SaaS / IT / Cloud</div>
+          <div class="target-detail" data-de="Security · Networking · Datacenter · Managed Services" data-en="Security · Networking · Datacenter · Managed Services">Security · Networking · Datacenter · Managed Services</div>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🏢</div>
+          <div class="target-name" data-de="Enterprise / Strategic" data-en="Enterprise / Strategic">Enterprise / Strategic</div>
+          <div class="target-detail" data-de="ACV CHF 250K+ · Multi-Stakeholder" data-en="ACV CHF 250K+ · Multi-Stakeholder">ACV CHF 250K+ · Multi-Stakeholder</div>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🇨🇭</div>
+          <div class="target-name" data-de="Schweiz · DACH" data-en="Switzerland · DACH">Schweiz · DACH</div>
+          <div class="target-detail" data-de="Basel / Remote · Schweizer Marktkenntnis" data-en="Basel / Remote · Swiss Market Know-How">Basel / Remote · Schweizer Marktkenntnis</div>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">📈</div>
+          <div class="target-name" data-de="Scale-Up / Growth" data-en="Scale-Up / Growth">Scale-Up / Growth</div>
+          <div class="target-detail" data-de="Greenfield Aufbau · Neue Märkte" data-en="Greenfield Build · New Markets">Greenfield Aufbau · Neue Märkte</div>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🎯</div>
+          <div class="target-name" data-de="Strategic AE · Senior AE" data-en="Strategic AE · Senior AE">Strategic AE · Senior AE</div>
+          <div class="target-detail" data-de="OTE Erwartung: CHF 250K+" data-en="OTE Expectation: CHF 250K+">OTE Erwartung: CHF 250K+</div>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🤖</div>
+          <div class="target-name" data-de="AI-Forward GTM" data-en="AI-Forward GTM">AI-Forward GTM</div>
+          <div class="target-detail" data-de="AI-Tools in Sales-Workflow willkommen" data-en="AI Tools in Sales Workflow Welcome">AI-Tools in Sales-Workflow willkommen</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section">
+      <div class="sec-label" data-de="Sprachen" data-en="Languages">Sprachen</div>
+      <div class="lang-row">
+        <div class="lang-pill"><div class="lang-flag">🇩🇪</div><div><div class="lang-name">Deutsch</div><div class="lang-level" data-de="Muttersprache" data-en="Native">Muttersprache</div></div></div>
+        <div class="lang-pill"><div class="lang-flag">🇮🇹</div><div><div class="lang-name">Italiano</div><div class="lang-level" data-de="Muttersprache" data-en="Native">Muttersprache</div></div></div>
+        <div class="lang-pill"><div class="lang-flag">🇬🇧</div><div><div class="lang-name">English</div><div class="lang-level" data-de="C1 · Cambridge-zertifiziert" data-en="C1 · Cambridge Certified">C1 · Cambridge-zertifiziert</div></div></div>
+      </div>
+    </div>
+
+    <!-- VERIFIED STRIP -->
+    <div class="verified-strip">
+      <span style="font-size:15px">✅</span>
+      <span class="verified-text" data-de="Track Record verifiziert via MVPLY Vault" data-en="Track record verified via MVPLY Vault">Track Record verifiziert via MVPLY Vault</span>
+      <span class="verified-sep"></span>
+      <span class="verified-text">200% Quota · CHF 1.5M Deal · 95% Renewal Rate</span>
+      <span class="verified-sep"></span>
+      <span class="verified-text">Candidate #0049 · Mai 2026</span>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-info">
+      <div>
+        <div class="f-title" data-de="Interesse? Wir stellen vor." data-en="Interested? We'll make the intro.">Interesse? Wir stellen vor.</div>
+        <div class="f-sub" data-de="Warme, persönliche Intro durch MVPLY — kein Bewerbungstheater." data-en="Warm, personal intro through MVPLY — no application theater.">Warme, persönliche Intro durch MVPLY — kein Bewerbungstheater.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Store original innerHTML as data-en fallback where missing
+  document.querySelectorAll('[data-de]').forEach(el => {
+    if (!el.getAttribute('data-en')) {
+      el.setAttribute('data-en', el.innerHTML.trim());
+    }
+  });
+  // Page starts DE — render all data-de values
+  applyLang('de');
+});
+
+function applyLang(lang) {
+  document.querySelectorAll('[data-de]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (val !== null) el.innerHTML = val;
+  });
+}
+
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.trim() === lang.toUpperCase());
+  });
+  applyLang(lang);
+}
+</script>
+</body>
+</html>
